@@ -4987,9 +4987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 8750859523234494970}
-  jumpSound: {fileID: 8300000, guid: eeb09f84f0ee636418b144e8c5c7d12c, type: 3}
-  dieSound: {fileID: 8300000, guid: 1073e8f3c210f3744b2970afc07ec4ab, type: 3}
-  increasePointsSound: {fileID: 8300000, guid: 3760ac1348e26954cbfb7110fbb63c80, type: 3}
+  jumpSound: {fileID: 8300000, guid: 1a5b49cdaaf0d8441b61bcdc97f4cbe5, type: 3}
+  dieSound: {fileID: 8300000, guid: 7cb1d1972de727e41b12e5ce2c810eb8, type: 3}
+  increasePointsSound: {fileID: 8300000, guid: b1a65f6a65d64204ba0d6fb8359e8f1f, type: 3}
   game: {fileID: 0}
 --- !u!61 &8750859523360216517
 BoxCollider2D:
