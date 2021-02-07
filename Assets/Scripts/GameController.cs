@@ -19,6 +19,11 @@ public class GameController : MonoBehaviour
     // Game State
     public GameState gameState = GameState.idle;
 
+    // Score System
+    public int points = 0;
+    public GameObject scoreUI;
+    public Text pointText;
+
     // Player
     public GameObject player;
     // Enemies
@@ -58,11 +63,16 @@ public class GameController : MonoBehaviour
     private void startGame()
     {
         gameState = GameState.playing;
+
         player.SendMessage("isPlaying", true);
         enemyGenerator.SendMessage("StartEnemyGeneration");
         GetComponent<AudioSource>().Play();
         // Difficulty
         InvokeRepeating("increaseDifficulty", increaseDifficultyEach, increaseDifficultyEach);
+
+        // Score UI
+        scoreUI.SetActive(true);
+        scoreUI.GetComponent<Animation>().Play("UiScoreBeginning");
     }
 
     private void endGame()
@@ -88,6 +98,11 @@ public class GameController : MonoBehaviour
     private void increaseDifficulty()
     {
         Time.timeScale += increaseDifficultyBy;
+    }
+
+    public void increasePoints()
+    {
+        pointText.text = (++points).ToString();
     }
 
     void ParallaxMovement()

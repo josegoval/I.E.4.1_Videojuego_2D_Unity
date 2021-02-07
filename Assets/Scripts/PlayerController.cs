@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     //public float timeInAir = 0f;
     private float groundHeightCoordinates;
 
+    public ParticleSystem particleSystem;
+
     private AudioSource audioSource;
     public AudioClip jumpSound;
     public AudioClip dieSound;
+    public AudioClip increasePointsSound;
 
     public GameObject game;
 
@@ -89,6 +92,22 @@ public class PlayerController : MonoBehaviour
             killPlayer();
             game.GetComponent<GameController>().gameState = GameState.ended;
         }
+        else if (collision.gameObject.tag == "Point")
+        {
+            game.SendMessage("increasePoints");
+            audioSource.PlayOneShot(increasePointsSound);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    void playParticles()
+    {
+        particleSystem.Play();
+    }
+
+    void stopParticles()
+    {
+        particleSystem.Stop();
     }
 
     public bool isPressingJump()
