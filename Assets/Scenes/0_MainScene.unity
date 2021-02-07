@@ -409,7 +409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 65042aa3c6235b046b3dfa6f626bf7e7, type: 3}
+  m_Texture: {fileID: 2800000, guid: ed755a6fe8731f0408ad0a9ce2731e63, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -465,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249703444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -3.5, z: 0}
+  m_LocalPosition: {x: 10, y: -3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -864,7 +864,7 @@ MonoBehaviour:
   player: {fileID: 1301019108}
   enemyGenerator: {fileID: 249703444}
   increaseDifficultyEach: 6
-  increaseDifficultyBy: 0.25
+  increaseDifficultyBy: 0.2
   deadAnimationTimeScale: 0.7
 --- !u!82 &1367351150
 AudioSource:
@@ -876,7 +876,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0907ed682bff27b47b420e90ab963422, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 21362949c15b1df498214fc377e09988, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da8aeaa8046bda849a22376d0bd5128c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 282fca6e468eb974b9ff38569aab139a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jumping Guy
+  m_Text: Endless Runner
 --- !u!222 &1605168736
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1290,15 +1290,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8750859523257617213, guid: c121c6d24e047b54bb5e83b8d5133941,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8750859523257617213, guid: c121c6d24e047b54bb5e83b8d5133941,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
+    - target: {fileID: 448105929, guid: c121c6d24e047b54bb5e83b8d5133941, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8750859523360216520, guid: c121c6d24e047b54bb5e83b8d5133941,
         type: 3}
@@ -1308,7 +1302,7 @@ PrefabInstance:
     - target: {fileID: 8750859523360216520, guid: c121c6d24e047b54bb5e83b8d5133941,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.45
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 8750859523360216520, guid: c121c6d24e047b54bb5e83b8d5133941,
         type: 3}
@@ -1365,5 +1359,20 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 1367351144}
+    - target: {fileID: 8750859523360216523, guid: c121c6d24e047b54bb5e83b8d5133941,
+        type: 3}
+      propertyPath: increasePointsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b1a65f6a65d64204ba0d6fb8359e8f1f, type: 3}
+    - target: {fileID: 8750859523360216523, guid: c121c6d24e047b54bb5e83b8d5133941,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a5b49cdaaf0d8441b61bcdc97f4cbe5, type: 3}
+    - target: {fileID: 8750859523360216523, guid: c121c6d24e047b54bb5e83b8d5133941,
+        type: 3}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cb1d1972de727e41b12e5ce2c810eb8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c121c6d24e047b54bb5e83b8d5133941, type: 3}
