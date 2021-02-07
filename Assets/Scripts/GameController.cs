@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour
     public int points = 0;
     public GameObject scoreUI;
     public Text pointText;
+    public Text bestScoreText;
+    private int maxScoreStored;
+    private String MAX_SCORE_KEY = "Max Score";
 
     // Player
     public GameObject player;
@@ -71,12 +74,16 @@ public class GameController : MonoBehaviour
         InvokeRepeating("increaseDifficulty", increaseDifficultyEach, increaseDifficultyEach);
 
         // Score UI
+        maxScoreStored = GetMaxScore();
+        changeBestScoreText(maxScoreStored);
         scoreUI.SetActive(true);
         scoreUI.GetComponent<Animation>().Play("UiScoreBeginning");
     }
 
     private void endGame()
     {
+        SaveMaxScore(points);
+        
         enemyGenerator.SendMessage("CancelEnemyGeneration", true);
         GetComponent<AudioSource>().Stop();
         Time.timeScale = deadAnimationTimeScale;
@@ -103,6 +110,25 @@ public class GameController : MonoBehaviour
     public void increasePoints()
     {
         pointText.text = (++points).ToString();
+        if (points > maxScoreStored)
+        {
+            changeBestScoreText(points);
+        }
+    }
+
+    public void changeBestScoreText(int value)
+    {
+        bestScoreText.text = "BEST SCORE: " + value.ToString();
+    }
+
+    private int GetMaxScore()
+    {
+        return PlayerPrefs.GetInt(MAX_SCORE_KEY, 0);
+    }
+
+    private void SaveMaxScore(int value)
+    {
+        PlayerPrefs.SetInt(MAX_SCORE_KEY, value);
     }
 
     void ParallaxMovement()

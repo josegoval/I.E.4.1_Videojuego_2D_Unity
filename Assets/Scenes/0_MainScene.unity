@@ -558,7 +558,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336081535}
-  - component: {fileID: 336081536}
   - component: {fileID: 336081537}
   m_Layer: 5
   m_Name: UI Score
@@ -588,19 +587,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &336081536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336081534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985216738e6c0474d81957ccd7937d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wasPress: 0
 --- !u!95 &336081537
 Animator:
   serializedVersion: 3
@@ -5898,6 +5884,7 @@ MonoBehaviour:
   points: 0
   scoreUI: {fileID: 336081534}
   pointText: {fileID: 56999504}
+  bestScoreText: {fileID: 269998768}
   player: {fileID: 1301019108}
   enemyGenerator: {fileID: 249703444}
   increaseDifficultyEach: 6
